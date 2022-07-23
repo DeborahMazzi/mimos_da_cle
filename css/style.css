@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap'); /*importa a fonte de letra no Google Fonts*/
+
+*{      /*zerar as configurações em todos os elementos*/
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+    outline: 0;
+}
+
+html, body{     /*configurações em comum para o html e o body*/
+    height: 100vh;  /*ocupando o tamanho todo da tela*/
+    font-family: "Source Sans Pro", "Verdana"; /*escolhe a letra importada e uma letra alternativa caso esteja indisponível*/
+    text-rendering: optimizeLegibility; /*mantem a definição do texto independente do tamanho da tela*/
+    -webkit-font-smoothing: antialiased; /*mantem a definição do texto independente da definição da tela*/
+}
+
+/*HEADER*/
+header{
+    background-color: rgb(252, 170, 170);
+}
+
+header .container{ /*configurações para a classe container do header*/
+    display: flex; /*os conteúdos serão flexíveis conforme o tamanho da tela*/
+    align-items: center; /*alinhamento de altura centralizado na barra superior*/
+    justify-content: space-between; /*cada item posicionado em um canto da tela independente do tamanho da tela*/
+    max-width: 980px; /*largura máxima do container superior*/
+    height: 80px; /*altura do container superior*/
+    margin: auto; /*margem adaptável*/
+}
+header nav ul{
+    display: flex; /*as abas superiores serão responsivas*/
+}
+header nav ul li{
+    list-style: none; /*tira os caracteres dos ícones de navegação*/
+}
+header nav ul li a{
+    text-decoration: none; /*tira o underline dos links*/
+    color: white;
+    text-transform: uppercase; /*texto em caixa alta*/
+    font-size: 18px;
+    padding: 24px; /*espaçamento entre itens*/
+    transition: all 200ms linear 0s; /*animação para aparição das abas*/
+}
+header nav ul li a:hover{ /*hover = ao passar com o mouse acontece uma ação*/
+    background: rgba(255, 255, 255, 0.15); /*muda a cor suavemente ao passar com o mouse*/
+}
+header .container img{ /*configuração do logo*/
+    height: 60px;
+}
+
+/*MAIN*/
+main{
+    margin-bottom: 100px; 
+}
+main .container-main{
+    display: flex; /*elementos do container flexíveis*/
+    align-items: center; /*alinhamento ao centro*/
+    justify-content: space-between; /*cada item posicionado em um canto da tela independente do tamanho da tela*/ 
+    max-width: 980px; /*largura máxima do container principal seguindo o mesmo do header*/
+    margin: 40px auto 0px auto; /*altura das margens*/
+}
+h2{
+    color:rgb(0,0,0);
+    font-size: 45px; /*tamanho da fonte*/
+    line-height: 50px; /*altura da linha*/
+    font-weight:bold; /*fonte negrito*/
+}
+h3{
+    color:rgb(255, 61, 61);;
+    font-size: 20px;
+    line-height: 20px;
+    margin:10px 0;
+}
+
+form{
+    margin-top: 20px;
+}
+
+form input{
+    width: 95%; /*tamanho da caixa*/
+    padding-left: 15px; /*margem esquerda*/
+    font-size: 15px; /*tamanho da fonta*/
+    height: 35px; /*tamanho da caixa*/
+    margin-bottom: 8px; /*margem entre os elementos*/
+    border-radius: 20px; /*arredondar bordas*/
+    border: 2px solid rgb(252, 170, 170); /*linhas da borda*/
+
+}
+form #caixamensagem{
+    width: 95%;
+    height: 70px;
+}
+
+form [type="submit"]{ /*configurando o botão enviar*/
+    background-color: rgb(252, 170, 170);
+    color: white;
+    width: 95%;
+    padding-left: 0px;
+}
+form [type="submit"]:hover { /*ação quando passa o mouse sobre o botão enviar*/
+    cursor: pointer;
+}
+
+main .container-main img{ /*configura a imagem da main*/
+    height: 320px;
+    border-radius: 20px;
+}
+
+#apresentacao{
+    max-width: 980px; /*largura máxima do container principal seguindo o mesmo do header*/
+    margin: 40px auto 0px auto; /*altura das margens*/
+}
+
+/*CARDS*/
+.cards{
+    width:98%;
+    max-width: 980px;
+    margin: auto;
+    display: grid; /*dispay em grade*/
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /*alinha os elementos em grade*/
+    grid-gap: 20px; /*distancia entre um item e outro*/
+}
+
+.text--medium{
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+    color: rgb(255, 61, 61);
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer; /*muda o cursor ao passar sobre os cards*/
+    box-shadow: 5px 5px 15px -4px #000000; /*coloca uma sombra na borda da caixa*/
+    transition: all 0.3s ease 0s; /*adiciona uma animação para chamar a atenção do usuário, tornando atrativo para clicar*/
+    border-radius: 10px;
+}
+.card:hover{
+    transform: translateY(-7px); /*eixo Y move para cima e eixo X mova para o lado*/
+}
+.image-card {
+    width: 100%;
+    padding-top: 70%;
+    overflow: hidden;
+    position: relative; 
+    border-radius: 10px;
+}
+
+.image-card img{
+    position: absolute; /*o elemento filho img é absoluto dentro do elemento pai image-card*/
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100.5%;
+}
+
+.content-card{
+    margin: 20px;
+}
+
+.text--medium{
+    margin-bottom: 0px;
+}
+.desafio{
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    align-items: center;
+    border: 1px solid black;
+    margin: 100px auto;
+    max-width: 980px;
+}
