@@ -48,6 +48,10 @@ header .container img{ /*configuração do logo*/
     height: 60px;
 }
 
+#checkbox-menu{
+    display:none
+}
+
 /*MAIN*/
 main{
     margin-bottom: 100px; 
