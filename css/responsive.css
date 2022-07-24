@@ -40,10 +40,10 @@
 }
 
 @media (max-width:630px){
-   .menu-bottom-container{
+   .menu-bottom-container{ /*para que ela apareça no local dela independente do tamanho da tela*/
     display:flex;
    }
-   .menu-ul{
+   .menu {
         position:absolute; /*faz com que o menu permaneça apenas na parte superior da página*/
         margin-top: 30px;   /*para que o menu fique abaixo do botão e não sobrepondo ele*/
         flex-direction: column; /*no estilo de colunas*/
@@ -51,10 +51,10 @@
         justify-content: center; /*com os textos no centro*/
         align-items: center; /*altura da linha também centralizado*/
         left: 100%; /*vindo da direita para esquerda*/
-        transform: translateX(100vh); /*tomando toda a tela*/
+        transform: translateX(100vw); /*tomando toda a tela*/
         transition: 0.5s ease transform; /*de forma suave*/
     }
-    .menu-ul>li{       /*configurar cada item do menu*/
+    .menu>li {       /*configurar cada item do menu*/
         display: flex;
         justify-content: center;
         margin: 0; /*sem margem entre os itens*/
@@ -64,10 +64,10 @@
         background-color:rgb(252, 170, 170);
         border-radius: 5px; /*com bordas levemente arredondadas*/
     }
-    .menu-ul>li:not(:last-child){ /*não aplica no último filho da lista*/
+    .menu>li:not(:last-child) { /*não aplica no último filho da lista*/
         border-bottom: 1px solid white;
     }
-    .menu-ul li a {        /*faz com que o botão seja clicado em qualquer lado da tela*/
+    .menu li a {        /*faz com que o botão seja clicado em qualquer lado da tela*/
         flex: 1;
         text-align: center;
     }
@@ -102,23 +102,23 @@
         top: 16px;
     }
 
-    #checkbox-menu:checked + label span:nth-child(1){
+    #checkbox-menu:checked + label span:nth-child(1){ /*para adicionar o efeito no icone do menu, o primeiro traço rota para um lado */
         transform: rotate(-45deg);
         top: 8px;
     }
-    #checkbox-menu:checked + label span:nth-child(2){
+    #checkbox-menu:checked + label span:nth-child(2){ /*o segundo traço some*/
        opacity: 0;
     }
-    #checkbox-menu:checked + label span:nth-child(3){
+    #checkbox-menu:checked + label span:nth-child(3){ /*o terceiro traço rota para o outro lado, cruzando o primeiro traço*/
         transform: rotate(45deg);
         top: 8px;
     }
 
-    nav.menu-ul{       /*para garantir que os itens sempre ocupem 100% da largura da tela*/
+    nav.menu{       /*para garantir que os itens sempre ocupem 100% da largura da tela*/
         width: 100%;
     }
 
-    #checkbox-menu:checkek ~ nav.menu-ul { /*ao clicar no botão menu ele se transforma no navegador*/
+    #checkbox-menu:checked~nav .menu { /*ao clicar no botão menu ele se transforma no navegador*/
         transform: translateX(-100vw);
         transition: 0.5s ease transform;
     }
