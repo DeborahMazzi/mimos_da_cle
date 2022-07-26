@@ -8,7 +8,6 @@
 }
 
 html, body{     /*configurações em comum para o html e o body*/
-    height: 100vh;  /*ocupando o tamanho todo da tela*/
     font-family: "Source Sans Pro", "Verdana"; /*escolhe a letra importada e uma letra alternativa caso esteja indisponível*/
     text-rendering: optimizeLegibility; /*mantem a definição do texto independente do tamanho da tela*/
     -webkit-font-smoothing: antialiased; /*mantem a definição do texto independente da definição da tela*/
@@ -103,6 +102,8 @@ form [type="submit"]{ /*configurando o botão enviar*/
 }
 form [type="submit"]:hover { /*ação quando passa o mouse sobre o botão enviar*/
     cursor: pointer;
+    background-color: rgba(252, 170, 170, 0.75); /*levemente opacp quando passa o mouse por cima*/
+    transform: translateY(-2px); /*movendo ao passar o mouse por cima*/
 }
 
 main .container-main img{ /*configura a imagem da main*/
@@ -116,6 +117,11 @@ main .container-main img{ /*configura a imagem da main*/
 }
 
 /*CARDS*/
+
+a{
+    text-decoration: none; /*retira o sublinhado dos links*/
+}
+
 .cards{
     width:98%;
     max-width: 980px;
@@ -148,7 +154,7 @@ main .container-main img{ /*configura a imagem da main*/
     padding-top: 70%;
     overflow: hidden;
     position: relative; 
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0 ; /*arredonda as duas pontas de cima e mantem as duas de baixo reto*/
 }
 
 .image-card img{
